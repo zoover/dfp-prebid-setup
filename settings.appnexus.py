@@ -9,22 +9,19 @@ GOOGLEADS_YAML_FILE = os.path.join(ROOT_DIR, 'googleads.yaml')
 #########################################################################
 
 # A string describing the order
-DFP_ORDER_NAME = "justpremium €20-50"
+DFP_ORDER_NAME = "AppNexus €4-7.99 v1"
 
 # The email of the DFP user who will be the trafficker for
 # the created order
 DFP_USER_EMAIL_ADDRESS = "zoover-hb-line-item-creator@dfp-hb-line-item-creator.iam.gserviceaccount.com"
 
 # The exact name of the DFP advertiser for the created order
-DFP_ADVERTISER_NAME = "justpremium"
+DFP_ADVERTISER_NAME = "AppNexus"
 
 # Names of placements the line items should target.
 DFP_TARGETED_PLACEMENT_NAMES = [
-  "justpremium HB"
+  "AppNexus HB"  
 ]
-
-# Names of ad units the line items should target.
-DFP_TARGETED_AD_UNIT_NAMES = []
 
 # Sizes of placements. These are used to set line item and creative sizes.
 DFP_PLACEMENT_SIZES = [
@@ -131,7 +128,7 @@ DFP_CURRENCY_CODE = 'EUR'
 # PREBID SETTINGS
 #########################################################################
 
-PREBID_BIDDER_CODE = "justpremium"
+PREBID_BIDDER_CODE = "AppNexus"
 
 # Price buckets. This should match your Prebid settings for the partner. See:
 # http://prebid.org/dev-docs/publisher-api-reference.html#module_pbjs.setPriceGranularity
@@ -139,9 +136,9 @@ PREBID_BIDDER_CODE = "justpremium"
 # https://github.com/prebid/Prebid.js/blob/8fed3d7aaa814e67ca3efc103d7d306cab8c692c/src/cpmBucketManager.js
 PREBID_PRICE_BUCKETS = {
   'precision': 2,
-  'min' : 20,
-  'max' : 50,
-  'increment': 0.2,
+  'min' : 4,
+  'max' : 7.99,
+  'increment': 0.01,
 }
 
 #########################################################################

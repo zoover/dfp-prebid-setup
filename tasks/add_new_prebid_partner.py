@@ -76,6 +76,10 @@ def setup_partner(user_email, advertiser_name, order_name, placements, ad_units,
       bidder_code, order_name, advertiser_id, num_creatives)
   creative_ids = dfp.create_creatives.create_creatives(creative_configs)
 
+  logger.info("Creative ids: {creative_ids}".format(
+    creative_ids=creative_ids,
+  ))
+
   # Get DFP key IDs for line item targeting.
   hb_bidder_key_id = get_or_create_dfp_targeting_key('hb_bidder')
   hb_pb_key_id = get_or_create_dfp_targeting_key('hb_pb')
@@ -190,7 +194,7 @@ def create_line_item_configs(prices, order_id, placement_ids, ad_unit_ids, bidde
     price_str = num_to_str(micro_amount_to_num(price))
 
     # Autogenerate the line item name.
-    line_item_name = u'{bidder_code}: HB ${price}'.format(
+    line_item_name = u'{bidder_code}: HB €{price}'.format(
       bidder_code=bidder_code,
       price=price_str
     )
